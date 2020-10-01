@@ -1,7 +1,7 @@
 // ElementManager.js
-import { TransitionHolder } from 'TransitionHolder.js';
+//import { TransitionHolder } from 'TransitionHolder.js';
 
-class ElementManager {
+export class ElementManager {
     constructor(element){
         this.element = element;
         this.transitions = Array();
@@ -80,8 +80,7 @@ class ElementManager {
         }
     }
 
-
-
-
-
 }
+
+
+//. export {ElementManager};

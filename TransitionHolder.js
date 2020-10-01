@@ -4,26 +4,28 @@ var emptyFunction = function(){
     return;
 }
 
-class TransitionHolder {
-    constructor(transitionFunction, reverseFunction=emptyFunction){
+export class TransitionHolder {
+    constructor(transitionFunction, reverseFunction=emptyFunction, ...transitionParameters){
+        console.log("constructed");
         this.transitionFunction = transitionFunction;
         this.reverseFunction = reverseFunction;
+        this.transitionParameters = transitionParameters;
     }
 
-    get transitionFunction(){
+    getTransitionFunction(){
         return this.transitionFunction;
     }
 
-    get reverseFunction(){
+    getReverseFunction(){
         return this.reverseFunction;
     }
 
     activateForwardTransition(){
-        return this.transitionFunction();
+        return this.transitionFunction(...this.transitionParameters);
     }
 
     activateReverseTransition(){
-        return this.reverseFunction();
+        return this.reverseFunction(...this.transitionParameters);
     }
     
 }
